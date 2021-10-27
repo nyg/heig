@@ -1,0 +1,139 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: User Management API
+  description: API to manage users
+  termsOfService: none
+  contact:
+    name: Nikolaos Garanis, Samuel Mettler
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /public/authenticate:
+    post:
+      tags:
+        - Public
+      operationId: authenticateUser
+      summary: Authenticate user.
+      description: Allows a user to authentication himself.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: identifiers
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/identifiers'
+      responses:
+        200:
+          description: User is authenticated.
+          schema:
+            $ref: '#/definitions/token'
+        401:
+          description: Authentication failed (e.g. wrong identifiers, inactive account).
+  /private/user:
+    put:
+      tags:
+        - Private
+      operationId: updateUser
+      summary: Update user information.
+      description: Allows a user to modify his account detail.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/optionalUser'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+      responses:
+        200:
+          description: Account updated.
+          schema:
+            $ref: '#/definitions/optionalUser'
+  /public/users:
+    post:
+      tags:
+        - Public
+      operationId: createUser
+      summary: Create a user account.
+      description: Allows anybody to register a new user account.
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/user'
+      responses:
+        201:
+          description: User created.
+        409:
+          description: User already exists.
+definitions:
+  identifiers:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        $ref: '#/definitions/email'
+      password:
+        $ref: '#/definitions/password'
+  optionalUser:
+    type: object
+    properties:
+      email:
+        $ref: '#/definitions/email'
+      password:
+        $ref: '#/definitions/password'
+      firstName:
+        type: string
+      lastName:
+        type: string
+      active:
+        type: boolean
+      admin:
+        type: boolean
+  user:
+    type: object
+    required:
+      - email
+      - password
+      - firstName
+      - lastName
+    properties:
+      email:
+        $ref: '#/definitions/email'
+      password:
+        $ref: '#/definitions/password'
+      firstName:
+        type: string
+      lastName:
+        type: string
+  email:
+    type: string
+  password:
+    type: string
+  token:
+    type: object
+    required:
+      - token
+    properties:
+      token:
+        type: string

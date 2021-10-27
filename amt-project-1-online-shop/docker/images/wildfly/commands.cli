@@ -1,0 +1,14 @@
+# Mark the commands below to be run as a batch
+batch
+
+# Increase transaction timeout (especially for generating large amount of business data)
+/subsystem=transactions:write-attribute(name=default-timeout,value=7200)
+
+# Add SQLite driver
+/subsystem=datasources/jdbc-driver=sqlite:add(driver-name=sqlite,driver-module-name=org.sqlite,driver-class-name=org.sqlite.JDBC)
+
+# Add datasources
+data-source add --name=SqliteDS --jta=false --driver-name=sqlite --jndi-name=java:jboss/datasources/SqliteDS --connection-url=jdbc:sqlite:/db/database.sqlite --enabled=true
+
+# Execute the batch
+run-batch

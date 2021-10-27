@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  wildfly:
+    build:
+      context: ../../.. # root of the project
+      dockerfile: docker/images/wildfly/Dockerfile
+    ports:
+      - 8080:8080
+      - 9990:9990
+      - 8787:8787
+    volumes:
+      - ${PWD}/../../../db/database-test.sqlite:/db/database.sqlite

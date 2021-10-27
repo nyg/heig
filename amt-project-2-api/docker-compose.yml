@@ -1,0 +1,76 @@
+version: '3.7'
+services:
+    # Spring Boot server for the user management API
+    user-mgmt-server:
+        container_name: user-mgmt-server
+        environment:
+            spring_profiles_active: docker
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.user-mgmt.rule=Host(`localhost`) && PathPrefix(`/api/mgmt`)"
+            - "traefik.http.services.user-mgmt.loadbalancer.server.port=8080"
+        build:
+            context: . # root of the project
+            dockerfile: docker-images/api-user-mgmt-server/Dockerfile
+        depends_on:
+            - db
+        # restart as long as db container is not started
+        restart: on-failure
+
+    # Spring Boot server for the business API
+    business-server:
+        container_name: business-server
+        environment:
+            spring_profiles_active: docker
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.business.rule=Host(`localhost`) && PathPrefix(`/api/business`)"
+            - "traefik.http.services.business.loadbalancer.server.port=8080"
+        build:
+            context: . # root of the project
+            dockerfile: docker-images/api-business-server/Dockerfile
+        depends_on:
+            - db
+        restart: on-failure
+
+    # One mariadb container with two different databases
+    db:
+        container_name: db
+        image: mariadb:10.4
+        labels:
+            - "traefik.enabled=true"
+            - "traefik.http.routers.db.rule=Host(`localhost`)"
+            - "traefik.http.routers.db.entrypoints=mysql"
+            - "traefik.http.routers.db.services=mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ./api-user-mgmt/db/init.sql:/docker-entrypoint-initdb.d/init-user-mgmt.sql
+            - ./api-business/db/init.sql:/docker-entrypoint-initdb.d/init-business.sql
+        ports:
+            - 3306:3306
+
+    # Traefik container that acts as the reverse proxy
+    traefik:
+        container_name: traefik
+        image: traefik:v2.1
+        command:
+            - "--api.insecure=true"
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
+            - "--entrypoints.web.address=:80"
+            - "--entrypoints.mysql.address=:3306"
+        ports:
+            - 8898:80
+            - 8080:8080
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+    
+    # Mostly for debug purposes
+    phpmyadmin:
+        container_name: phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_HOST=db
+        ports:
+            - 8888:80
