@@ -1,0 +1,31 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    width: 800px;
+    margin: auto;
+    background-color: beige;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px grey;
+}
+
+.big {
+    font-weight: bolder;
+    font-size: 18px;
+    color: tomato;
+}
+
+.blink {
+    animation: blinker 1.5s step-start infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
