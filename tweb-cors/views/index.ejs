@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h1>CORS example</h1>
+
+    <h2>Embed CORS resource</h2>
+
+    <p>The same origin policy allows to embed cross-origin resources.</p>
+
+    <img src="http://localhost:3001/image.png" />
+
+    <h2>GET cross-origin Resource with Fetch</h2>
+
+    <p>The same origin policy forbids to fetch cross-origin resources with JavaScript.</p>
+
+    <script>
+        /*
+        fetch("http://localhost:3001/cors.json")
+            .then(res => res.json())
+            .then(json => console.log(json.message))
+            .catch(err => console.log(err));
+        */
+    </script>
+
+    <h2>DELETE cross-origin resource with Fetch (Preflight)</h2>
+
+    <p>The same origin policy forbids to fetch cross-origin resources with JavaScript.</p>
+
+    <script>
+        /*
+        fetch("http://localhost:3001/cors-preflight.json", { method: 'DELETE', credentials: 'include' })
+            .then(res => res.json())
+            .then(json => console.log(json.message))
+            .catch(err => console.log(err));
+        */
+    </script>
+
+</body>
+
+</html>

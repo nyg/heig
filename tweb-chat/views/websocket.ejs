@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= user %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= user %></h1>
+    <form id="message" method="POST" action="send">
+        <input type="text" name="message" id="content" />
+        <input type="submit" value="Send" />
+    </form>
+    <div id="messages"></div>
+    <script>
+        const socket = new WebSocket('ws://localhost:3000/websocket/<%= user %>/messages');
+        socket.onopen = function (e) {
+            message.onsubmit = event => {
+                event.preventDefault();
+                console.log(content.value)
+                socket.send(content.value);
+            }
+            socket.onmessage = function (message) {
+                let data = JSON.parse(message.data);
+                let html = `<p><b>${data.user}</b>: <i>${data.content}</i>`;
+                messages.innerHTML = html + messages.innerHTML;
+            };
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GraphQL Demo</title>
+</head>
+<body>
+    <div id="graphql"></div>
+    <script>
+        fetch('/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({ query: "{ hello }" })
+        })
+            .then(r => r.json())
+            .then(data => document.getElementById("graphql").innerText = JSON.stringify(data));    
+    </script>
+</body>
+</html>

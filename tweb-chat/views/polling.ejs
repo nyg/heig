@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= user %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= user %></h1>
+    <form id="message" method="POST" action="send">
+        <input type="text" name="message" />
+        <input type="submit" value="Send" />
+    </form>
+    <div id="messages"></div>
+    <script>
+      message.onsubmit = event => {
+        event.preventDefault();
+        let data = new URLSearchParams(new FormData(message));
+        fetch('messages', {method: 'POST', body: data});
+      }
+      async function polling() {
+        let response = await fetch('messages');
+        let json = await response.json();
+        let html = json.map(message => `<p><b>${message.user}</b>: <i>${message.content}</i>`).join("");
+        messages.innerHTML = html + messages.innerHTML;
+      }
+      setInterval(polling, 10000);
+    </script>
+  </body>
+</html>

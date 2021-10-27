@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= user %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= user %></h1>
+    <form id="message" method="POST" action="send">
+        <input type="text" name="message" />
+        <input type="submit" value="Send" />
+    </form>
+    <div id="messages"></div>
+    <script>
+        message.onsubmit = event => {
+            event.preventDefault();
+            let data = new URLSearchParams(new FormData(message));
+            fetch('messages', { method: 'POST', body: data });
+        }
+        let eventSource = new EventSource('messages');
+        eventSource.addEventListener('message', event => {
+            let message = JSON.parse(event.data);
+            let html = `<p><b>${message.user}</b>: <i>${message.content}</i>`;
+            messages.innerHTML = html + messages.innerHTML;
+        });
+    </script>
+</body>
+
+</html>

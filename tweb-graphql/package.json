@@ -1,0 +1,17 @@
+{
+  "name": "example-graphql",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
