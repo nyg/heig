@@ -5,5 +5,7 @@
 * Scala, professeur : Fatemi Nastaran, labos fait avec Nathan Séville.
 * Sécurité des réseaux (SRX), professeur : Abraham Rubinstein, labos fait avec Nathanael Mizutani.
 * Sécurité des réseaux sans-fil (SWI), professeur : Abraham Rubinstein, labos fait avec Mickael Bonjour.
+* Sécurité des technologies internet (STI), professeur : Abraham Rubinstein, projet fait avec Samuel Mettler.
+* Systèmes mobiles (SYM), professeur : Fabien Dutoit, labos fait avec Mickael Bonjour et Samuel Mettler.
 * Technologies web (TWEB), exemples du professeur Bertil Chappuis.
 

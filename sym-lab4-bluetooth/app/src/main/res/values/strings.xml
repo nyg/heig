@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SYM - Labo 4</string>
+
+    <string name="nav_4">Capteurs</string>
+    <string name="nav_5">BLE</string>
+
+    <string name="ble_menu_search">Recherche</string>
+    <string name="ble_menu_disconnect">Déconnexion</string>
+
+    <string name="ble_empty">Veuillez lancer le scan <i>Bluetooth Low Energy</i> en appuyant ci-dessus</string>
+
+    <string name="ble_currenttime_title">Current time</string>
+    <string name="ble_currenttime_set">Set time</string>
+    <string name="ble_clickcounter_title">Click counter</string>
+    <string name="ble_temperature_title">Température</string>
+    <string name="ble_temperature_read">Read</string>
+
+    <string name="ble_sendvalue_title">Envoi de valeur</string>
+    <string name="ble_sendvalue_send">Send</string>
+
+    <string name="ble_read_button">Read</string>
+    <string name="ble_write_button">Write</string>
+
+    <string name="ble_temperature_label">Temperature</string>
+    <string name="ble_buttons_clicked_label">Buttons clicked</string>
+    <string name="ble_datetime_label">Date &amp; time</string>
+    <string name="ble_integer_input">Integer</string>
+
+    <string name="ble_temp_not_read">Temperature could not be read from device.</string>
+    <string name="ble_time_not_written">Time was not written to device.</string>
+    <string name="ble_integer_not_written">Integer was not written to device.</string>
+</resources>

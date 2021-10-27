@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/text_send_3"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_3_name" />
+
+        <EditText
+                android:id="@+id/edit_name_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/activity_3_formName" />
+
+        <EditText
+                android:id="@+id/edit_middlename_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/activity_3_formMiddlename" />
+
+        <EditText
+                android:id="@+id/edit_firstname_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/activity_3_formFirstname" />
+
+        <RadioGroup
+                android:id="@+id/group_gender_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioButton
+                    android:id="@+id/radio_gender_male_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onGenderChanged"
+                    android:text="@string/activity_3_formMale" />
+
+            <RadioButton
+                    android:id="@+id/radio_gender_female_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onGenderChanged"
+                    android:text="@string/activity_3_formFemale" />
+        </RadioGroup>
+
+        <TextView
+                android:id="@+id/text_phone_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_3_formPhone" />
+
+        <EditText
+                android:id="@+id/edit_phone_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="@string/activity_3_formPhoneNumber" />
+
+        <TextView
+                android:id="@+id/text_phone_type__3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_3_formType" />
+
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioButton
+                    android:id="@+id/radio_type_home_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onPhoneTypeChanged"
+                    android:text="@string/activity_3_formPhoneHome" />
+
+            <RadioButton
+                    android:id="@+id/radio_type_work_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onPhoneTypeChanged"
+                    android:text="@string/activity_3_formPhoneWork" />
+
+            <RadioButton
+                    android:id="@+id/radio_type_mobile_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onPhoneTypeChanged"
+                    android:text="@string/activity_3_formPhoneMobile" />
+        </RadioGroup>
+
+        <TextView
+                android:id="@+id/text_method_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_3_formMethod" />
+
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioButton
+                    android:id="@+id/radio_method_json_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="onSerialisationMethodChanged"
+                    android:text="@string/activity_3_formMethodJSON" />
+
+            <RadioButton
+                    android:id="@+id/radio_method_xml_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onSerialisationMethodChanged"
+                    android:text="@string/activity_3_formMethodXML" />
+        </RadioGroup>
+
+        <Button
+                android:id="@+id/button_send_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_common_send_button" />
+
+        <TextView
+                android:id="@+id/Receive_text_3"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_common_received" />
+
+        <TextView
+                android:id="@+id/received_view_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

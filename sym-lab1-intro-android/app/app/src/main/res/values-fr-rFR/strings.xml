@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SYM Template Activity</string>
+    <string name="email">E-mail</string>
+    <string name="good">Identifiant valide, bienvue !</string>
+    <string name="permissionDenied">Permission refusée</string>
+    <string name="psw">mot de passe</string>
+    <string name="signin">S\'identifier</string>
+    <string name="validemail">Email pas valide</string>
+    <string name="wrong">Email ou mot de passe non valide</string>
+    <string name="wronglogin">Erreur de login</string>
+    <string name="EmailEntered">TextView</string>
+</resources>

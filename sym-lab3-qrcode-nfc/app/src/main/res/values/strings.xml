@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">NFC &amp; Barcodes</string>
+
+    <!-- NFC -->
+    <string name="NFC">NFC</string>
+    <string name="title_activity_nfc">NFCActivity</string>
+    <string name="nfc_scan_button_title">Scan</string>
+
+    <!-- Bar Code Simple -->
+    <string name="bcs_button_title">Bar Code (simple)</string>
+    <string name="bcs_scan_cancelled">Scan cancelled</string>
+
+    <!-- Bar Code Advanced -->
+    <string name="bca_button_title">Bar Code (advanced)</string>
+    <string name="bca_scan_barcode">Scan a barcode</string>
+
+    <!-- NFC login activity-->
+    <string name="nfc_text_password">Password</string>
+    <string name="nfc_text_username">Username</string>
+    <string name="nfc_button_login">Login</string>
+    <string name="nfc_text_scan_false">NFC tokens not scanned</string>
+    <string name="nfc_text_scan_true">NFC tokens scanned</string>
+
+    <!-- NFC logged in activity-->
+    <string name="nfc_loggedIn_low_security">Min security</string>
+    <string name="nfc_loggedIn_medium_security">Medium security</string>
+    <string name="nfc_loggedIn_max_security">Max security</string>
+    <string name="nfc_loggedIn_timestamp_update">Timestamp up to date, authorisation level set to MAX</string>
+    <string name="nfc_loggedIn_access_ok">Access authorised</string>
+    <string name="nfc_loggedIn_access_not_ok">Access denied : current autorisation level is </string>
+
+    <!-- NFC Activity -->
+    <string name="nfc_activity_scan_requirement">You need to scan the NFC</string>
+    <string name="nfc_activity_bad_login">Invalid credentials</string>
+
+    <!-- NFC Activities -->
+    <string name="nfc_activities_unsupported">This device does not support NFC</string>
+    <string name="nfc_activities_disabled">NFC is disabled</string>
+</resources>

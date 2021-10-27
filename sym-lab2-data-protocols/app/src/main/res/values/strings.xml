@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">SYM_Labo2</string>
+
+    <!-- Common to all activities -->
+    <string name="activity_common_send">Sent data</string>
+    <string name="activity_common_received">Received data</string>
+    <string name="activity_common_send_hint">Write some text here…</string>
+    <string name="activity_common_send_button">Send</string>
+
+    <!-- Activity 1 constant -->
+    <string name="activity_1_name">Asynchronous</string>
+
+    <!-- Activity 2 constant -->
+    <string name="activity_2_name">Deferred</string>
+
+    <!-- Activity 3 constant -->
+    <string name="activity_3_name">Serialisation (JSON &amp; XML)</string>
+    <string name="activity_3_error_xml">Error parsing XML.</string>
+    <string name="activity_3_formName">Name</string>
+    <string name="activity_3_formMiddlename">Middlename</string>
+    <string name="activity_3_formFirstname">Firstname</string>
+    <string name="activity_3_formGender">Gender</string>
+    <string name="activity_3_formMale">Male</string>
+    <string name="activity_3_formFemale">Female</string>
+    <string name="activity_3_formPhone">Phone</string>
+    <string name="activity_3_formPhoneNumber">076 123 45 67</string>
+    <string name="activity_3_formType">Type</string>
+    <string name="activity_3_formPhoneHome">Home</string>
+    <string name="activity_3_formPhoneWork">Work</string>
+    <string name="activity_3_formPhoneMobile">Mobile</string>
+    <string name="activity_3_formMethod">Method</string>
+    <string name="activity_3_formMethodJSON">JSON</string>
+    <string name="activity_3_formMethodXML">XML</string>
+
+    <!-- Activity 4 constant -->
+    <string name="activity_4_name">Compression (deflate)</string>
+
+    <!-- Activity 5 constant -->
+    <string name="activity_5_name">GraphQL API</string>
+    <string name="activity_5_ChooseActor">Choose Actor</string>
+    <string name="activity_5_ActorsQuote">Actors Quote</string>
+    <string name="activity_5_default">No actor selected</string>
+    <string name="activity_5_allAuthors">allAuthors</string>
+    <string name="activity_5_allPost">allPostByAuthor</string>
+    <string name="activity_5_graphql_error">Error during the GraphQL request.</string>
+
+</resources>
