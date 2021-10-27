@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  postgres:
+    image: postgres
+    container_name: bottender-postgres
+    environment:
+      - POSTGRES_USER=scala
+      - POSTGRES_PASSWORD=scala
+      - POSTGRES_DB=BotTender
+    ports:
+      - "5436:5432"
+    volumes:
+      - ./sql/tables.sql:/docker-entrypoint-initdb.d/init.sql
