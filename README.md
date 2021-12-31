@@ -2,6 +2,7 @@
 
 * Administration IT (AIT), professeur : Marcel Graf, labos fait avec Samuel Mettler, démo avec Mickael Bonjour, Miguel Gouveia, Doriane Kaffo et Samuel Mettler.
 * Applications multi-tiers (AMT), professeur : Olivier Liechti, projets fait avec Samuel Mettler.
+* Programmation réseau (RES),  professeur : Olivier Liechti, labo fait avec Nathanaël Mizutani.
 * Scala, professeur : Fatemi Nastaran, labos fait avec Nathan Séville.
 * Sécurité des systèmes d'exploitation (SOS), intervenants SCRT : Bogdan Nicorici, Julien Oberson & Fabrice Caralinda, labos fait avec Nathanaël Mizutani.
 * Sécurité des réseaux (SRX), professeur : Abraham Rubinstein, labos fait avec Nathanael Mizutani.
